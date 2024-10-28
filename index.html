@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Ponto</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <h1>Registro de Ponto</h1>
+
+    <div>
+        <button id="btn-registrar-ponto">Registrar Ponto</button>
+    </div>
+
+    <dialog id="dialog-ponto">
+        <form method="dialog">
+            <label for="data-input">Data:</label>
+            <input type="text" id="data-input" placeholder="DD/MM/YYYY" maxlength="10">
+            <label for="select-tipos-ponto">Tipo de Ponto:</label>
+            <select id="select-tipos-ponto">
+                <option value="entrada">Entrada</option>
+                <option value="intervalo">Intervalo</option>
+                <option value="volta-intervalo">Volta do Intervalo</option>
+                <option value="saida">Saída</option>
+            </select>
+            <label for="observacao">Observação:</label>
+            <input type="text" id="observacao" placeholder="Observação">
+            <label for="justificativa">Justificativa (opcional):</label>
+            <input type="file" id="justificativa">
+            <button id="btn-dialog-registrar-ponto">Registrar</button>
+            <button id="btn-dialog-fechar">Fechar</button>
+        </form>
+    </dialog>
+
+    <div id="div-alerta" class="hidden">Registro salvo com sucesso!</div>
+
+    <h2>Relatório de Registros</h2>
+
+    <div>
+        <button id="btn-filtrar-semana">Última Semana</button>
+        <button id="btn-filtrar-mes">Último Mês</button>
+        <button id="btn-filtrar-todos">Todos os Registros</button>
+    </div>
+
+    <div>
+        <span id="dia-semana"></span>, <span id="dia-mes-ano"></span>
+        - Hora: <span id="hora-min-seg"></span>
+    </div>
+    <div>
+        <h2>Localização Atual</h2>
+        <p id="localizacao">Obtendo localização...</p>
+    </div>
+
+    <table id="tabelaRegistros">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Hora</th>
+                <th>Tipo</th>
+                <th>Observação</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+
+    <script src="script.js"></script> 
+</body>
+</html>
